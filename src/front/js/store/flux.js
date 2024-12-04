@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			token: undefined,
 			message: null,
 			demo: [
 				{
@@ -46,6 +47,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			setToken: (token) => {
+				setStore({ token: token })
+				localStorage.setItem('token', token)
+			},
+			clearToken: () => {
+				setStore({ token: undefined })
+				localStorage.removeItem('token')
 			}
 		}
 	};
