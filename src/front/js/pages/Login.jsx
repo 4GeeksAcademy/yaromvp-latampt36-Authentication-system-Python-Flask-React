@@ -13,7 +13,7 @@ export function Login(){
 
     const logIn = async (emailLogIn, passwordLogIn) => {
         try{
-            const response = await fetch('https://humble-adventure-pjg4j7wgjrr5h65pw-3001.app.github.dev/api/token', {
+            const response = await fetch(process.env.BACKEND_URL + '/api/token', {
                 method : 'POST',                
                 body: JSON.stringify({
                     email: emailLogIn,

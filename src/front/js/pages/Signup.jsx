@@ -11,7 +11,7 @@ export function Signup(){
 
     const signUp = async (emailSignUp, passwordSignUp) => {
         try{
-            const response = await fetch('https://humble-adventure-pjg4j7wgjrr5h65pw-3001.app.github.dev/api/user', {
+            const response = await fetch(process.env.BACKEND_URL + '/api/user', {
                 method : 'POST',                
                 body: JSON.stringify({
                     email: emailSignUp,
